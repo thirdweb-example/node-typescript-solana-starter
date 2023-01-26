@@ -16,6 +16,9 @@ const main = async () => {
       process.env.PRIVATE_KEY as string
     );
 
+    console.log("Logged in as", sdk.wallet.getAddress());
+    console.log("Balance", await sdk.wallet.getBalance());
+
     const programAddress = await sdk.deployer.createNftDrop({
       name: "My Drop",
       totalSupply: 3,
